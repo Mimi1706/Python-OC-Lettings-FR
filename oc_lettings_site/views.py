@@ -32,3 +32,15 @@ def profile(request, username):
     profile = Profile.objects.get(user__username=username)
     context = {"profile": profile}
     return render(request, "profile.html", context)
+
+
+def error_404(request, exception):
+    return render(request, "error_404.html", status=404)
+
+
+def error_500(request):
+    return render(request, "error_500.html", status=500)
+
+
+def simulate_error_500(request):
+    raise Exception("Simulating a 500 error!")

@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %} 500 Not Found {% endblock title %}
+{% block content %}
+<div class="container px-5 py-5 text-center">
+  <h1>500 Internal Server Error</h1>
+  <p>
+    Something went wrong on our end. We are working to fix it as quickly as
+    possible.
+  </p>
+  <p>We apologize for the inconvenience.</p>
+  <a class="btn fw-500 ms-lg-4 btn-primary px-10" href="{% url 'index' %}">
+    Return to Home Page
+  </a>
+</div>
+
+{% endblock %}
