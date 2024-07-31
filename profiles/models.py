@@ -3,6 +3,14 @@ from django.contrib.auth.models import User
 
 
 class Profile(models.Model):
+    """
+    Represents a user profile.
+
+    Attributes:
+        user (OneToOneField): The associated user account.
+        favorite_city (CharField): The user's favorite city (optional).
+    """
+
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="profiles_profile"
     )
