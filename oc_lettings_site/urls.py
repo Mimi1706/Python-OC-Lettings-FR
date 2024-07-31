@@ -2,6 +2,9 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
+def trigger_error(request):
+    1 / 0
+
 urlpatterns = [
     path("", views.index, name="index"),
     path("lettings/", views.lettings_index, name="lettings_index"),
@@ -10,6 +13,7 @@ urlpatterns = [
     path("profiles/<str:username>/", views.profile, name="profile"),
     path("admin/", admin.site.urls),
     path("error_500/", views.simulate_error_500, name="simulate_500"),
+    path('sentry-debug/', trigger_error),
 ]
 
 
