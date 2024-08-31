@@ -119,3 +119,4 @@ def simulate_error_500(request):
         Exception: Always raises an exception to simulate a 500 error.
     """
     raise Exception("Simulating a 500 error!")
+

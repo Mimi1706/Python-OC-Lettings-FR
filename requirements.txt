@@ -1,5 +1,6 @@
 asgiref==3.8.1
 black==24.4.2
+certifi==2024.7.4
 click==8.1.7
 coverage==7.6.0
 Django==5.0.7
@@ -16,4 +17,6 @@ pyflakes==3.2.0
 pytest==8.3.1
 pytest-cov==5.0.0
 pytest-django==4.8.0
+sentry-sdk==2.12.0
 sqlparse==0.5.1
+urllib3==2.2.2
