@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build:
@@ -26,10 +23,33 @@ jobs:
           python3 -m pip install --upgrade pip
           pip3 install -r requirements.txt
 
+  test:
+    runs-on: ubuntu-latest
+    needs: build # Run tests after build job is completed
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12.5'
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip3 install -r requirements.txt
+
       - name: Run tests
         run: |
           pytest --nomigrations -v
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test # Run deployment after tests are successful
+
+    steps:
       - name: Trigger Render Deployment
         env:
           RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
