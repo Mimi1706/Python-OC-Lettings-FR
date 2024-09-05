@@ -1,10 +1,6 @@
-Documentation de l’application
-==============================
-Une documentation technique a été rédigée, comprenant :
+Documentation
+=============
 
-- Description du projet.
-- Instructions d’installation.
-- Guide de démarrage rapide.
-- Description de la structure de la base de données.
-- Guide d’utilisation avec cas d’utilisation.
-- Procédures de déploiement et de gestion de l’application.
+This project uses **Sphinx** for generating documentation and **Read the Docs** for hosting it.
+
+Sphinx is employed to create structured and comprehensive documentation. Read the Docs is utilized to host and manage the documentation online, providing easy access and updates.

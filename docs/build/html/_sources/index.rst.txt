@@ -1,15 +1,15 @@
-============================================================
-Site Web OC-Lettings 2.0 - Caractéristiques et Améliorations
-============================================================
+Welcome to OC-Lettings Documentation
+====================================
 
-Ce projet vise à améliorer l'architecture et les fonctionnalités du site existant oc-lettings à travers une série d'optimisations techniques.
+This documentation provides an overview of the OC-Lettings project, including its features, installation instructions, and other relevant information.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   architecture_modulaire
-   problemes_existants
-   surveillance_sentry
-   pipeline_cicd
+   installation
+   architecture_modular
+   issues_resolution
+   sentry_monitoring
+   cicd_pipeline
    documentation
