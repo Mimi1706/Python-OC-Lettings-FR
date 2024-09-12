@@ -28,7 +28,7 @@ def lettings_index(request):
     """
     lettings_list = Letting.objects.all()
     context = {"lettings_list": lettings_list}
-    return render(request, "lettings_index.html", context)
+    return render(request, "lettings/index.html", context)
 
 
 def letting(request, letting_id):
@@ -47,7 +47,7 @@ def letting(request, letting_id):
         "title": letting.title,
         "address": letting.address,
     }
-    return render(request, "letting.html", context)
+    return render(request, "lettings/letting.html", context)
 
 
 def profiles_index(request):
@@ -62,7 +62,7 @@ def profiles_index(request):
     """
     profiles_list = Profile.objects.all()
     context = {"profiles_list": profiles_list}
-    return render(request, "profiles_index.html", context)
+    return render(request, "profiles/index.html", context)
 
 
 def profile(request, username):
@@ -78,7 +78,7 @@ def profile(request, username):
     """
     profile = Profile.objects.get(user__username=username)
     context = {"profile": profile}
-    return render(request, "profile.html", context)
+    return render(request, "profiles/profile.html", context)
 
 
 def error_404(request, exception):
@@ -92,7 +92,7 @@ def error_404(request, exception):
     Returns:
         HttpResponse: Rendered 404 error page.
     """
-    return render(request, "error_404.html", status=404)
+    return render(request, "errors/error_404.html", status=404)
 
 
 def error_500(request):
@@ -105,7 +105,7 @@ def error_500(request):
     Returns:
         HttpResponse: Rendered 500 error page.
     """
-    return render(request, "error_500.html", status=500)
+    return render(request, "errors/error_500.html", status=500)
 
 
 def simulate_error_500(request):

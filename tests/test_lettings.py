@@ -25,7 +25,7 @@ def test_lettings_index():
     assert response.status_code == 200
     assert path == "/lettings/"
     assert expected_content in content
-    assert response.templates[0].name == "lettings_index.html"
+    assert response.templates[0].name == "lettings/index.html"
 
 
 @pytest.mark.django_db

@@ -26,7 +26,7 @@ def test_profiles_index():
     assert response.status_code == 200
     assert path == "/profiles/"
     assert expected_content in content
-    assert response.templates[0].name == "profiles_index.html"
+    assert response.templates[0].name == "profiles/index.html"
 
 
 @pytest.mark.django_db
@@ -49,4 +49,4 @@ def test_display_profile():
     assert response.context["profile"] == profile
     assert "Test City" in response.content.decode()
     assert "testuser" in response.content.decode()
-    assert response.templates[0].name == "profile.html"
+    assert response.templates[0].name == "profiles/profile.html"
