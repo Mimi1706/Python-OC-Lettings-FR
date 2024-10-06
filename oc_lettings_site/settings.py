@@ -1,10 +1,13 @@
 import os
 import sentry_sdk
 from pathlib import Path
+from dotenv import load_dotenv
 
+# Load environment variables from the .env file
+load_dotenv()
 
 sentry_sdk.init(
-    dsn="https://dece0321edd982ac6c28cc795e41fcf0@o4507435941953536.ingest.de.sentry.io/4507697492525136",
+    dsn=os.getenv("SENTRY_DSN"),
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
     traces_sample_rate=1.0,
