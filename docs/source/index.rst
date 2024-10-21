@@ -9,7 +9,9 @@ This documentation provides an overview of the OC-Lettings project, including it
 
    installation
    architecture_modular
-   issues_resolution
+   database
+   issue_resolution
+   application_endpoints
    sentry_monitoring
    cicd_pipeline
    documentation
