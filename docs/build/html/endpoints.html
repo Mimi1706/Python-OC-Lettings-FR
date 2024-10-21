@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Endpoints &mdash; Documentation oc-lettings </title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=041d0952"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Issue Resolution" href="issue_resolution.html" />
+    <link rel="prev" title="Database Architecture" href="database_architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            oc-lettings
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modular_architecture.html">Modular Architecture Improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_architecture.html">Database Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#index-view">Index View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-all-lettings">List All Lettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#letting-details">Letting Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-all-profiles">List All Profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-profile-details">User Profile Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simulate-500-error">Simulate 500 Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#error-handling">Error Handling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="issue_resolution.html">Issue Resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sentry_monitoring.html">Error Monitoring with Sentry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cicd_pipeline.html">CI/CD Pipeline and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">oc-lettings</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Endpoints</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/endpoints.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="endpoints">
+<h1>Endpoints<a class="headerlink" href="#endpoints" title="Lien vers cette rubrique"></a></h1>
+<p>This API provides endpoints for managing lettings and user profiles. It includes functionality to render pages for viewing all lettings, specific lettings, user profiles, and handling error pages.</p>
+<section id="index-view">
+<h2>Index View<a class="headerlink" href="#index-view" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><strong>URL</strong>: <cite>/</cite></p></li>
+<li><p><strong>Method</strong>: <cite>GET</cite></p></li>
+<li><p><strong>Description</strong>: Renders the homepage.</p></li>
+<li><p><strong>Response</strong>:
+- <strong>200 OK</strong>: Renders the homepage (<cite>index.html</cite>).
+- <strong>500 Internal Server Error</strong>: Renders a custom error page (<cite>errors/error_500.html</cite>) if an exception occurs.</p></li>
+</ul>
+</section>
+<section id="list-all-lettings">
+<h2>List All Lettings<a class="headerlink" href="#list-all-lettings" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><strong>URL</strong>: <cite>/lettings/</cite></p></li>
+<li><p><strong>Method</strong>: <cite>GET</cite></p></li>
+<li><p><strong>Description</strong>: Renders a list of all lettings.</p></li>
+<li><p><strong>Response</strong>:
+- <strong>200 OK</strong>: Renders a page with a list of all lettings (<cite>lettings/index.html</cite>).
+- <strong>500 Internal Server Error</strong>: Renders a custom error page if an exception occurs.</p></li>
+</ul>
+</section>
+<section id="letting-details">
+<h2>Letting Details<a class="headerlink" href="#letting-details" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><strong>URL</strong>: <cite>/lettings/&lt;letting_id&gt;/</cite></p></li>
+<li><p><strong>Method</strong>: <cite>GET</cite></p></li>
+<li><p><strong>Path Parameters</strong>:
+- <cite>letting_id</cite> (<em>int</em>): The ID of the letting to retrieve.</p></li>
+<li><p><strong>Description</strong>: Renders details for a specific letting.</p></li>
+<li><p><strong>Response</strong>:
+- <strong>200 OK</strong>: Renders the details of the specified letting (<cite>lettings/letting.html</cite>).
+- <strong>404 Not Found</strong>: Renders a custom 404 error page if the letting does not exist.
+- <strong>500 Internal Server Error</strong>: Renders a custom error page if an exception occurs.</p></li>
+</ul>
+</section>
+<section id="list-all-profiles">
+<h2>List All Profiles<a class="headerlink" href="#list-all-profiles" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><strong>URL</strong>: <cite>/profiles/</cite></p></li>
+<li><p><strong>Method</strong>: <cite>GET</cite></p></li>
+<li><p><strong>Description</strong>: Renders a list of all user profiles.</p></li>
+<li><p><strong>Response</strong>:
+- <strong>200 OK</strong>: Renders a page with a list of all user profiles (<cite>profiles/index.html</cite>).
+- <strong>500 Internal Server Error</strong>: Renders a custom error page if an exception occurs.</p></li>
+</ul>
+</section>
+<section id="user-profile-details">
+<h2>User Profile Details<a class="headerlink" href="#user-profile-details" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><strong>URL</strong>: <cite>/profiles/&lt;username&gt;/</cite></p></li>
+<li><p><strong>Method</strong>: <cite>GET</cite></p></li>
+<li><p><strong>Path Parameters</strong>:
+- <cite>username</cite> (<em>str</em>): The username of the profile to retrieve.</p></li>
+<li><p><strong>Description</strong>: Renders a specific user profile based on username.</p></li>
+<li><p><strong>Response</strong>:
+- <strong>200 OK</strong>: Renders the specified user profile (<cite>profiles/profile.html</cite>).
+- <strong>404 Not Found</strong>: Renders a custom 404 error page if the profile does not exist.
+- <strong>500 Internal Server Error</strong>: Renders a custom error page if an exception occurs.</p></li>
+</ul>
+</section>
+<section id="simulate-500-error">
+<h2>Simulate 500 Error<a class="headerlink" href="#simulate-500-error" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><strong>URL</strong>: <cite>/error_500/</cite></p></li>
+<li><p><strong>Method</strong>: <cite>GET</cite></p></li>
+<li><p><strong>Description</strong>: Simulates a 500 server error by raising an exception.</p></li>
+<li><p><strong>Response</strong>:
+- <strong>500 Internal Server Error</strong>: Always renders a custom error page (<cite>errors/error_500.html</cite>).</p></li>
+</ul>
+</section>
+<section id="error-handling">
+<h2>Error Handling<a class="headerlink" href="#error-handling" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><strong>404 Error</strong>: Handled by <cite>error_404(request, exception)</cite> which returns a custom 404 error page.</p></li>
+<li><p><strong>500 Error</strong>: Handled by <cite>error_500(request)</cite> which returns a custom 500 error page.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="database_architecture.html" class="btn btn-neutral float-left" title="Database Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="issue_resolution.html" class="btn btn-neutral float-right" title="Issue Resolution" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, Mimi.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
