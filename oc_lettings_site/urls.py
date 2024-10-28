@@ -12,6 +12,6 @@ urlpatterns = [
     path("error_500/", views.simulate_error_500, name="simulate_500"),
 ]
 
-## Define custom error views
+# Define custom error views
 handler404 = views.error_404
 handler500 = views.error_500

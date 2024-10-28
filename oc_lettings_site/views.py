@@ -106,7 +106,7 @@ def profile(request, username):
         return render(request, "errors/error_500.html", status=500)
 
 
-def error_404(request, exception): 
+def error_404(request, exception):
     """
     Render a custom 404 error page.
 
