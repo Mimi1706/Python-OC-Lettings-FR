@@ -15,6 +15,13 @@ Orange County Lettings is a startup in the real estate rental sector.
 - **CI/CD Pipeline:** Established continuous integration and deployment with Docker and Render.
 - **Documentation:** Comprehensive documentation generated with Sphinx and hosted on Read the Docs.
 
+## Admin
+
+You can access the admin panel by navigating to /admin in the application.
+Use the following credentials to log in:
+**ID (Username):** admin
+**Password:** Abc1234!
+
 ## Installation and Documentation
 
 You can install and run the project using Docker or by setting up a Python virtual environment. For detailed installation instructions and further documentation, please refer to the [project documentation](https://mimi1706-python-oc-lettings-fr.readthedocs.io/en/latest/).
